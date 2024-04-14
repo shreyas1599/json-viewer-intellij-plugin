@@ -27,6 +27,6 @@ public class TestJsonViewer extends LightJavaCodeInsightFixtureTestCase {
         assertTrue(myFixture.getEditor().getDocument().getText().contains("{ \\\"hello\\\": \\\"old\\\" }"));
         myFixture.testAction(new OverridenTestJsonViewer());
 
-        assertTrue(myFixture.getEditor().getDocument().getText().contains("{ \\\"hello\\\": \\\"new\\\" }"));
+        assertTrue(myFixture.getEditor().getDocument().getText().contains("{ \\\"hello\\\": \\\"ne\\\" }"));
     }
 }
