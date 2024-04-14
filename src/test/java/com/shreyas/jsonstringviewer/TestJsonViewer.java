@@ -16,7 +16,7 @@ public class TestJsonViewer extends LightJavaCodeInsightFixtureTestCase {
         }
     }
 
-    public void testModifiedTextIsPersisted() throws IOException {
+    public void testModifiedTextIsPersisted() {
         myFixture.configureByText("MyClass.java", """
                 public class MyClass {
                     public getExpression() {
@@ -27,6 +27,6 @@ public class TestJsonViewer extends LightJavaCodeInsightFixtureTestCase {
         assertTrue(myFixture.getEditor().getDocument().getText().contains("{ \\\"hello\\\": \\\"old\\\" }"));
         myFixture.testAction(new OverridenTestJsonViewer());
 
-        assertTrue(myFixture.getEditor().getDocument().getText().contains("{ \\\"hello\\\": \\\"ne\\\" }"));
+        assertTrue(myFixture.getEditor().getDocument().getText().contains("{ \\\"hello\\\": \\\"new\\\" }"));
     }
 }
